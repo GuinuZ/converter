@@ -34,6 +34,8 @@ def converter(
 
     return result
 
+#Versão Assincrona, v1
+
 @router.get('/async/{from_currency}')
 async def async_converter_router(
             from_currency: str = Path(max_length=3, regex='^[A-Z]{3}$'), 
@@ -58,7 +60,7 @@ async def async_converter_router(
 
     return result
 
-# Segunda Versão Async
+# Versão Assincrona v2 / Body parameter
 
 @router.get('/async/v2/{from_currency}', response_model=ConverterOutput)
 async def async_converter_router(
